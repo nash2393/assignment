@@ -9,3 +9,12 @@ def sort(width, height, length, mass):
         return "SPECIAL"
     else:
         return "STANDARD"
+
+
+if __name__ == "__main__":
+    # Quick test cases
+    print(sort(100, 100, 100, 10))   # SPECIAL (volume = 1,000,000 → bulky)
+    print(sort(200, 50, 50, 10))     # SPECIAL (dimension ≥ 150)
+    print(sort(100, 100, 100, 25))   # SPECIAL (heavy only)
+    print(sort(200, 200, 200, 25))   # REJECTED (both bulky & heavy)
+    print(sort(50, 50, 50, 10))      # STANDARD (neither bulky nor heavy)
